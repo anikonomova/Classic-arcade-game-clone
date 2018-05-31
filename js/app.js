@@ -1,3 +1,53 @@
+class Player {
+  constructor (x, y) {
+    this.sprite = 'images/char-pink-girl.png';
+    this.y = 400;
+    this.x = 200;
+    this.width = 50;
+    this.height = 50;
+    this.score = 0;
+    }
+
+update(dt) {
+    this.reset();
+    }
+
+render() {
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+}
+//the code is borrowed from https://stackoverflow.com/questions/4416505/how-to-take-keyboard-input-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+handleInput(pressedKey) {
+  switch (pressedKey) {
+    case 'up':
+    if(this.y > -10) {
+    this.y -=70;
+  }
+    break;
+    case 'down':
+    if (this.y < 400) {
+      this.y +=70;
+    }
+    break;
+    case 'left':
+    if (this.x > 0) {
+    this.x -=70;
+  }
+    break;
+    case 'right':
+    if (this.x < 400) {
+    this.x +=70;
+  }
+    break;
+  }
+}
+
+reset() {
+  if (this.y < 1) {
+    this.y = 400;
+    this.x = 200;
+}
+}
+};
 // Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
