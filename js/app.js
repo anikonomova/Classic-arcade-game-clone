@@ -86,8 +86,17 @@ render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 };
-// Now instantiate your objects.
+
 // Place all enemy objects in an array called allEnemies
+const allEnemies = [];
+
+let enemy1 = new Enemy (-500,60);
+let enemy2 = new Enemy (-400, 140);
+let enemy3 = new Enemy (-250, 220);
+let enemy4 = new Enemy (-390, 60);
+let enemy5 = new Enemy (-100, 220);
+let enemy6 = new Enemy (-150, 220);
+let enemy7 = new Enemy (-50, 60);
 
 
 
