@@ -98,7 +98,9 @@ let enemy5 = new Enemy (-100, 220);
 let enemy6 = new Enemy (-150, 220);
 let enemy7 = new Enemy (-50, 60);
 
+// Place all enemy objects in an array called allEnemies
 
+allEnemies.push(enemy1,enemy2,enemy3,enemy4,enemy5, enemy6, enemy7);
 
 
 // This listens for key presses and sends the keys to your
