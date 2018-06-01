@@ -1,3 +1,5 @@
+const score = document.getElementsByClassName('score');
+
 class Player {
   constructor (x, y) {
     this.sprite = 'images/char-pink-girl.png';
@@ -45,6 +47,8 @@ reset() {
   if (this.y < 1) {
     this.y = 400;
     this.x = 200;
+    this.score += 10;
+    score.textContent = this.score;
 }
 }
 };
@@ -67,7 +71,7 @@ class Enemy {
     // all computers.
     this.collide();
     if (this.x < 505) {
-      this.x += ( Math.floor((Math.random() * 100) + 30) * dt);
+      this.x += this.speed * dt;
     } else {
       this.x = -100;
     }
@@ -78,7 +82,9 @@ class Enemy {
        player.y < this.y + 50 && player.y + 50 > this.y) {
       player.x = 200;
       player.y = 400;
+      life --;
       hideHearts();
+      player.score = 0;
     }
 }
 // Draw the enemy on the screen, required method for game
@@ -90,19 +96,36 @@ render() {
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
 
-let enemy1 = new Enemy (-500,60);
-let enemy2 = new Enemy (-400, 140);
-let enemy3 = new Enemy (-250, 220);
-let enemy4 = new Enemy (-390, 60);
-let enemy5 = new Enemy (-100, 220);
-let enemy6 = new Enemy (-150, 220);
-let enemy7 = new Enemy (-50, 60);
+let enemy1 = new Enemy (-500,60, (Math.random() * 100));
+let enemy2 = new Enemy (-400, 140, (Math.random() * 200));
+let enemy3 = new Enemy (-250, 220, (Math.random() * 300));
+let enemy4 = new Enemy (-390, 60, (Math.random() * 150));
+let enemy5 = new Enemy (-100, 220, (Math.random() * 220));
+let enemy6 = new Enemy (-150, 220, (Math.random() * 300));
+let enemy7 = new Enemy (-50, 60, (Math.random() * 130));
 
 // Place all enemy objects in an array called allEnemies
 
 allEnemies.push(enemy1,enemy2,enemy3,enemy4,enemy5, enemy6, enemy7);
 
+//Losing lives
+let state = document.querySelector('.state');
+let lives = state.querySelectorAll('li');
+let life = 3;
 
+let allLives = Array.from(lives);
+
+function hideHearts () {
+  if (life === 2) {
+    allLives[2].classList.add('hide');
+  } else if (life === 1) {
+    allLives[1].classList.add('hide');
+  } else if (life === 0) {
+    allLives[0].classList.add('hide');
+  } else if (life === -1) {
+    endGame();
+  }
+}
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
