@@ -1,5 +1,4 @@
-const points = document.getElementsByClassName('score');
-
+points = document.getElementById('score');
 //getting the endGame modal
 let modal = document.getElementById('modal');
 const close = document.querySelector(".close");
@@ -9,7 +8,6 @@ const replayGame = document.querySelector('.replayButton');
 const f5 = document.querySelector('.restart');
 f5.addEventListener('click', restart);
 
-let score = 0;
 
 class Player {
   constructor (x, y) {
@@ -59,8 +57,7 @@ reset() {
     this.y = 400;
     this.x = 200;
     this.score += 10;
-    score.innerHTML = this.score;
-}
+	points.innerHTML = this.score;}
 }
 };
 // Place the player object in a variable called player
@@ -137,12 +134,13 @@ function hideHearts () {
     endGame();
   }
 }
+
 //showing the modal
 function endGame() {
 
     modal.style.display = 'block';
 
-    finalScore = document.querySelector(".score").innerHTML;
+    finalScore = document.querySelector("#score").innerHTML;
 
         document.querySelector('.finalScore').innerHTML = finalScore;
 replay();
