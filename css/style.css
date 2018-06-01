@@ -1,3 +1,40 @@
 body {
     text-align: center;
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.state {
+    text-align: left;
+    width: 345px;
+    }
+
+.state .lives {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 25%
+    }
+
+.state .lives li {
+    list-style: none;
+    display: inline-block;
+    color: red;
+    font-size: 150%;
+}
+
+.state .score {
+  font-size: 150%;
+  }
+.state .restart {
+    float: right;
+    cursor: pointer;
+    font-size: 130%;
+    color: red;
+}
+.state .lives .hide {
+  display: none;
+}
