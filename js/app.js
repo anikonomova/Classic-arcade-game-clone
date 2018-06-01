@@ -1,4 +1,15 @@
-const score = document.getElementsByClassName('score');
+const points = document.getElementsByClassName('score');
+
+//getting the endGame modal
+let modal = document.getElementById('modal');
+const close = document.querySelector(".close");
+const replayGame = document.querySelector('.replayButton');
+
+//adding the f5 arrow
+const f5 = document.querySelector('.restart');
+f5.addEventListener('click', restart);
+
+let score = 0;
 
 class Player {
   constructor (x, y) {
@@ -48,7 +59,7 @@ reset() {
     this.y = 400;
     this.x = 200;
     this.score += 10;
-    score.textContent = this.score;
+    score.innerHTML = this.score;
 }
 }
 };
@@ -125,6 +136,40 @@ function hideHearts () {
   } else if (life === -1) {
     endGame();
   }
+}
+//showing the modal
+function endGame() {
+
+    modal.style.display = 'block';
+
+    finalScore = document.querySelector(".score").innerHTML;
+
+        document.querySelector('.finalScore').innerHTML = finalScore;
+replay();
+closeModal();
+};
+
+//closing the modal on 'X'
+function closeModal(e){
+    close.addEventListener("click", function(){
+        modal.style.display = "none";
+        for (let enemy of allEnemies) {
+          enemy.speed = 0;
+        }
+    });
+};
+
+//replaying at Try again?
+function replay(e){
+replayGame.addEventListener("click", function(){
+    modal.style.display = "none";
+    restart();
+  });
+
+};
+
+function restart() {
+ location.reload(true);
 }
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
