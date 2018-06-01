@@ -2,10 +2,31 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Effective JavaScript: Frogger</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+     <title>Effective JavaScript: Frogger</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="container">
+    <header class = "name">
+        <h1>The runner</h1>
+    </header>
+
+    <section class="state">
+      <ul class="lives">
+        <li><i class="fas fa-heart"></i></li>
+        <li><i class="fas fa-heart"></i></li>
+        <li><i class="fas fa-heart"></i></li>
+      </ul>
+
+      <span class="score">0</span> Points
+        <div class="restart">
+        <i class="fa fa-repeat"></i>
+      </div>
+</section>
+        </div>
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
