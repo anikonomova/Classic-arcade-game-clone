@@ -14,7 +14,8 @@ all of your lives, you have to play again.
 ## How it's made?
 
 
-The starting code is from Udacity's Front-End Web Developer Nanodegree Program. I used HTML, CSS, JS to:
+The code is from Udacity's Front-End Web Developer Nanodegree Program. I used HTML, CSS, JS to change the app.js, style.css and index.html files to:
+
 * manipulate the DOM;
 * create the classes, the new objects and add their methods
 * add a points counter, lives counter and a replay button;
