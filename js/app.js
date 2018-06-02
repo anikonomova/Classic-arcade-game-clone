@@ -92,7 +92,6 @@ class Enemy {
       player.y = 400;
       life --;
       hideHearts();
-      player.score = 0;
     }
 }
 // Draw the enemy on the screen, required method for game

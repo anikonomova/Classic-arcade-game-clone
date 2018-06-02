@@ -46,6 +46,9 @@ h1 {
 }
 .state .lives .hide {
   display: none;
+  animation-name: bounce;
+  animation-duration: 2s;
+  transform-origin: center bottom;
 }
 #modal {
   display: none;
@@ -82,4 +85,18 @@ button {
 
 .popup .hide {
   display: none
+}
+
+.popup .finalScore {
+  color: black;
+  font-style: oblique;
+  font-size: 150%;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.popup .final {
+  color: black;
+  font-style: oblique;
+  font-size: 150%;
+  font-family: 'Permanent Marker', cursive;
 }
