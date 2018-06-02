@@ -1,6 +1,24 @@
-frontend-nanodegree-arcade-game
-===============================
+# The Runner - classic arcade game clone
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## What is The Runner?
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+That's a funny arcade game. You have to cross the roads and reach the water. Once a bug gets you - you lose a life. When you lose
+all of your lives, you have to play again.
+
+## Instructions
+
+* You can use the arrow keys to move.
+* Your goal is to reach the water - every time you reach the water you get 10 points.
+* The game ends when you lose your lives.
+
+## How it's made?
+
+
+The starting code is from Udacity's Front-End Web Developer Nanodegree Program. I used HTML, CSS, JS to:
+* manipulate the DOM;
+* create the classes, the new objects and add their methods
+* add a points counter, lives counter and a replay button;
+* create popup modal at the end of the game;
+* change some styles and make the game responsive;
+
+## Good luck and have fun!!!
